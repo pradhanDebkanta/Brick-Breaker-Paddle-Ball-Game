@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.score-container {
+    height: auto;
+    /* height: 50px; */
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F2F4C3;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    white-space: pre-wrap;
+}
+
+.score {
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: #C490E4;
+}
+
+.highest-score {
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    color: #77D970;
+    font-family: monospace;
+}
+
+.h-score {
+    color: #A239EA;
+}
+
+.startScreen {
+    height: auto;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(131, 17, 224);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: #efefef;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.startScreen:hover {
+    background-color: transparent;
+    border: 2px solid rgb(142, 43, 235);
+    color: rgb(131, 17, 224);
+    transition: all 0.3s ease;
+}
+
+.gameArea {
+    margin-top: 1rem;
+    width: 80%;
+    height: 400px;
+    border: 4px groove #A239EA;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #DBD0C0;
+}
+
+.paddle {
+    position: absolute;
+    top: 455px;
+    left: 50%;
+    height: 15px;
+    width: 100px;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    /* background-color: #A239EA; */
+    background-image: url('./paddle.jpg');
+    background-size: 100px 15px;
+}
+
+.ball {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-image: url('./ball1.png');
+    background-size: 25px 25px;
+}
+
+.dir-control-box {
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    height: 150px;
+    width: 150px;
+    padding: 4px;
+    border-radius: 100%;
+    border: 2px solid;
+    border-left-color: #A239EA;
+    border-top-color: #d53a9d;
+    border-right-color: #FF5C58;
+    border-bottom-color: #A239EA;
+    transform: translate(-50%, -50%);
+}
+
+.up_arrow_box, .right_arrow_box, .left_arrow_box {
+    display: inline-block;
+    border-radius: 100%;
+    border: 3px groove transparent;
+    transition: all 0.3s ease;
+    background-color: #C8C6C6;
+}
+
+.up_arrow_box {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    margin-bottom: 16px;
+    margin-top: 4px;
+    z-index: 999;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+.left_arrow_box {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    transform: translate(0, -50%);
+    margin-right: 8px;
+    margin-left: 13px;
+    z-index: 999;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.right_arrow_box {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    transform: translate(0, -50%);
+    margin-left: 8px;
+    margin-right: 13px;
+    z-index: 999;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+
+.c_arrow1, .c_arrow2, .c_arrow4 {
+    cursor: pointer;
+    animation: blinking 4s infinite;
+    animation-timing-function: linear;
+}
+
+.c_arrow2, .c_arrow4 {
+    padding: 8px 11px;
+    /* color: #F43B86; */
+}
+
+.c_arrow1{
+    padding: 8px 9px;
+}
+
+.border_class {
+    border: 3px groove #a277e7;
+    background-color: #3EECAC;
+    background-image: linear-gradient(19deg, #3EECAC 0%, #EE74E1 100%) !important;
+}
+
+.hide {
+    display: none;
+}
+
+@media (max-width: 770.98px) {
+    .gameArea {
+        width: 90%;
+    }
+    .modal-body {
+        width: 60%;
+    }
+    .dir-control-box {
+        height: 170px;
+        width: 170px;
+        left: 50%;
+        bottom: -80px;
+        padding: 28px;
+        border: none;
+    }
+    .c_arrow2, .c_arrow4 {
+        padding: 17px 20px;
+    }
+    .c_arrow1{
+        padding: 17px 18px;
+    }
+    .up_arrow_box, .left_arrow_box, .right_arrow_box {
+        background-color: transparent;
+        background-image: none;
+    }
+}
+
+@media (max-width: 479.98px) {
+    .modal-body {
+        width: 80%;
+    }
+}
+
+@keyframes blinking {
+    0% {
+        color: #0CECDD;
+        font-size: 1.4rem;
+    }
+    35% {
+        color: #C400FF;
+    }
+    70% {
+        color: #00EAD3;
+    }
+    100% {
+        color: #E93B81;
+        font-size: 1.0rem;
+    }
+}
