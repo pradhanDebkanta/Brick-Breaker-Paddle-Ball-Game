@@ -8,10 +8,10 @@ let isStart = false;
 let isGamePlay = false;
 let lHScore = 0;
 
-if (window.localStorage.getItem('hScore')) {
-    lHScore = window.localStorage.getItem('hScore');
+if (window.localStorage.getItem('jvnkt44')) {
+    lHScore = window.localStorage.getItem('jvnkt44');
 } else {
-    window.localStorage.setItem('hScore', 0);
+    window.localStorage.setItem('jvnkt44', 0);
     lHScore = 0;
 }
 
@@ -191,8 +191,8 @@ function gameOver() {
     console.log('game over');
     isStart = false;
 
-    if (window.localStorage.getItem('hScore') < player.score) {
-        window.localStorage.setItem('hScore', player.score);
+    if (window.localStorage.getItem('jvnkt44') < player.score) {
+        window.localStorage.setItem('jvnkt44', player.score);
     }
     let gameOverContainer = document.createElement('div');
     let modalBody = document.createElement('div');
@@ -226,7 +226,7 @@ function gameOver() {
     replayBtn.addEventListener('click', () => {
         isStart = true;
 
-        lHScore = window.localStorage.getItem('hScore');
+        lHScore = window.localStorage.getItem('jvnkt44');
         player.highestScore = lHScore;
         player.score = 0;
         player.live = 3;
@@ -245,7 +245,7 @@ function gameOver() {
 function returnHome() {
     console.log('home');
     isStart = false;
-    lHScore = window.localStorage.getItem('hScore');
+    lHScore = window.localStorage.getItem('jvnkt44');
     player.highestScore = lHScore;
     player.score = 0;
     player.live = 3;
